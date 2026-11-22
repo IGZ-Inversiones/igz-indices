@@ -6,6 +6,8 @@ on:
   push:
     paths:
       - "tickers.txt"          # si agregás un ticker, se regenera solo
+      - "update_precios.py"
+      - "update_dolares.py"
 permissions:
   contents: write
 jobs:
@@ -21,11 +23,15 @@ jobs:
       - name: Generar data/precios.json
         continue-on-error: true    # si falla, indices.json se publica igual
         run: python update_precios.py
+      - name: Generar data/dolares.json
+        continue-on-error: true
+        run: python update_dolares.py
       - name: Commit si cambio
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add data/indices.json
           if [ -f data/precios.json ]; then git add data/precios.json; fi
+          if [ -f data/dolares.json ]; then git add data/dolares.json; fi
           git diff --staged --quiet || git commit -m "indices/precios $(date -u +%F)"
           git push
