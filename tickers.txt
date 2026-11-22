@@ -1,0 +1,161 @@
+# Universo de precios para la herramienta de carteras IGZ.
+# Una línea por activo:  TICKER_LOCAL[=SIMBOLO_YAHOO]
+# - CEDEARs: el ticker local suele coincidir con el de EE.UU. (BRKB=BRK-B es la excepción típica).
+# - Acciones argentinas: se mapean a su ADR para medir el retorno en USD (YPFD=YPF).
+# Para sumar un activo nuevo, agregá una línea y corré el workflow a mano (Actions > Run workflow).
+
+# Benchmarks y ETFs
+SPY
+QQQ
+DIA
+IWM
+EEM
+EWZ
+GLD
+SLV
+IBIT
+ETHA
+ARKK
+XLE
+XLF
+XLK
+XLU
+XLV
+XLI
+XLP
+XLY
+XLC
+XLB
+XLRE
+SMH
+URA
+
+# Tecnología / comunicación
+AAPL
+MSFT
+GOOGL
+AMZN
+META
+NVDA
+TSLA
+NFLX
+AMD
+INTC
+AVGO
+TSM
+ASML
+MU
+QCOM
+ORCL
+CRM
+ADBE
+PLTR
+UBER
+SHOP
+SPOT
+IBM
+CSCO
+SNOW
+NOW
+PANW
+CRWD
+NET
+
+# LatAm / emergentes
+MELI
+BABA
+JD
+PDD
+NU
+PAGS
+STNE
+GLOB
+DESP
+VIST
+PBR
+VALE
+
+# Financieras / pagos
+BRKB=BRK-B
+JPM
+BAC
+C
+GS
+MS
+WFC
+V
+MA
+PYPL
+AXP
+COIN
+HOOD
+BLK
+
+# Consumo
+KO
+PEP
+MCD
+WMT
+COST
+PG
+NKE
+SBUX
+DIS
+MO
+PM
+HD
+TGT
+
+# Salud
+JNJ
+PFE
+MRK
+ABBV
+LLY
+UNH
+NVO
+ABT
+
+# Energía / materiales / minería
+XOM
+CVX
+OXY
+SLB
+B
+NEM
+FCX
+RIO
+BHP
+GEV
+VST
+CEG
+
+# Industriales / defensa
+LMT
+RTX
+BA
+CAT
+DE
+GE
+MMM
+HON
+UPS
+
+# Telecom
+T
+VZ
+
+# Acciones argentinas (vía ADR, retorno en USD)
+YPFD=YPF
+GGAL=GGAL
+BMA=BMA
+PAMP=PAM
+TGSU2=TGS
+CEPU=CEPU
+LOMA=LOMA
+CRES=CRESY
+TECO2=TEO
+IRSA=IRS
+EDN=EDN
+SUPV=SUPV
+BBAR=BBAR
