@@ -1,8 +1,11 @@
-name: Actualizar indices (SPY/QQQ)
+name: Actualizar indices (SPY/QQQ) y precios de carteras
 on:
   schedule:
     - cron: "30 22 * * 1-5"   # dias habiles, ~19:30 ET (despues del cierre de EE.UU.)
   workflow_dispatch:           # permite correrlo a mano
+  push:
+    paths:
+      - "tickers.txt"          # si agregás un ticker, se regenera solo
 permissions:
   contents: write
 jobs:
@@ -15,10 +18,14 @@ jobs:
           python-version: "3.x"
       - name: Generar data/indices.json
         run: python update_indices.py
+      - name: Generar data/precios.json
+        continue-on-error: true    # si falla, indices.json se publica igual
+        run: python update_precios.py
       - name: Commit si cambio
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add data/indices.json
-          git diff --staged --quiet || git commit -m "indices $(date -u +%F)"
+          if [ -f data/precios.json ]; then git add data/precios.json; fi
+          git diff --staged --quiet || git commit -m "indices/precios $(date -u +%F)"
           git push
