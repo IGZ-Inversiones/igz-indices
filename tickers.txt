@@ -30,6 +30,21 @@ XLRE
 SMH
 URA
 
+# Renta fija (para benchmarks de asignación)
+BIL
+SHV
+SHY
+IEI
+IEF
+TLT
+GOVT
+TIP
+AGG
+BND
+LQD
+HYG
+EMB
+
 # Tecnología / comunicación
 AAPL
 MSFT
