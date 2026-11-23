@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Genera data/precios.json para la herramienta de carteras IGZ.
 
-Lee tickers.txt (TICKER_LOCAL[=SIMBOLO_YAHOO]) y baja 5 años de precios de
+Lee tickers.txt (TICKER_LOCAL[=SIMBOLO_YAHOO]) y baja 10 años de precios de
 cierre AJUSTADOS (dividendos reinvertidos + splits) de Yahoo Finance.
 Todas las series quedan alineadas al calendario de SPY.
 Formato:
@@ -14,7 +14,7 @@ import json, urllib.request, datetime, os, time, sys
 
 UA = {"User-Agent": "Mozilla/5.0 (compatible; IGZ-precios/1.0)"}
 HOSTS = ["query1.finance.yahoo.com", "query2.finance.yahoo.com"]
-RANGE = "5y"
+RANGE = "10y"
 
 
 def leer_tickers(path="tickers.txt"):
